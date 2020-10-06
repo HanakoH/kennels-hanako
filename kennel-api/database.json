@@ -34,9 +34,40 @@
             "id": 1,
             "name": "Hannah Hall",
             "address": "7002 Chestnut Ct"
+        },
+        {
+            "id": 2,
+            "name": "Brandon Soundara",
+            "address": "8675 309 Street"
+        },
+        {
+            "id": 3,
+            "name": "Bill O'Bob",
+            "address": "248 Billy Goat lane"
         }
     ],
-    "employees": [],
+    "employees": [
+        {
+            "id": 1,
+            "name": "Jeremy Bakker",
+            "locationId": 2
+        },
+        {
+            "id": 2,
+            "name": "Sarah Haines",
+            "locationId": 2
+        },
+        {
+            "id": 3,
+            "name": "Fred George III",
+            "locationId": 1
+        },
+        {
+            "id": 4,
+            "name": "Barnabus Carl",
+            "locationId": 1
+        }
+    ],
     "locations": [
         {
             "id": 1,
