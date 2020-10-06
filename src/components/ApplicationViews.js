@@ -4,8 +4,9 @@ import { Home } from "./Home"
 import { AnimalProvider } from "./animal/AnimalProvider"
 import { AnimalList } from "./animal/AnimalList"
 import { EmployeeCard } from "./employee/Employee";
-import { LocationCard } from "./location/Location";
 import { CustomerCard } from "./customer/Customer";
+import { LocationProvider } from "./location/LocationProvider";
+import { LocationList } from "./location/LocationList"
 
 export const ApplicationViews = () => {
     return (
@@ -28,9 +29,11 @@ export const ApplicationViews = () => {
             </Route>
 
             {/* Render the location list when http://localhost:3000/locations */}
-            <Route path="/locations">
-                <LocationCard />
-            </Route>
+            <LocationProvider>
+                <Route path="/locations">
+                    <LocationList />
+                </Route>
+            </LocationProvider>
 
             {/* Render the custom list when http://localhost:3000/customers */}
             <Route path="/customers">

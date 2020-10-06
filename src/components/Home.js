@@ -1,8 +1,8 @@
 import React from "react";
-import { AnimalCard } from "./animal/AnimalCard";
-import { EmployeeCard } from "./employee/Employee";
-import { LocationCard } from "./location/Location";
-import { CustomerCard } from "./customer/Customer";
+// import { AnimalCard } from "./animal/AnimalCard";
+// import { EmployeeCard } from "./employee/Employee";
+// import { LocationCard } from "./location/Location";
+// import { CustomerCard } from "./customer/Customer";
 
 export const Home = () => (
     <>
@@ -14,7 +14,7 @@ export const Home = () => (
             <div>500 Puppy Way</div>
         </address>
 
-        <h2>Animals</h2>
+        {/* <h2>Animals</h2>
         <article className="animals">
             <AnimalCard />
             <AnimalCard />
@@ -36,6 +36,6 @@ export const Home = () => (
             <CustomerCard />
             <CustomerCard />
             <CustomerCard />
-        </article>
+        </article> */}
     </>
 )

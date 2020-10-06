@@ -16,7 +16,7 @@ export const AnimalList = () => {
 
 
     return (	
-		<div className="animals">
+		<div className="animals_container">
 		    {console.log("AnimalList: Render")}
         {
 			animals.map(animal => {
