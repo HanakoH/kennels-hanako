@@ -1,14 +1,12 @@
 import React, { useContext, useRef, useEffect } from "react"
 import { LocationContext } from "../location/LocationProvider"
-import { AnimalContext } from "./AnimalProvider"
-import { CustomerContext } from "../customer/CustomerProvider"
-import "./Animal.css"
+import { EmployeeContext } from "./EmployeeProvider"
+import "./Employee.css"
 import { useHistory } from 'react-router-dom';
 
-export const AnimalForm = () => {
-    const { addAnimal } = useContext(AnimalContext)
+export const EmployeeForm = () => {
+    const { addEmployee } = useContext(EmployeeContext)
     const { locations, getLocations } = useContext(LocationContext)
-    const { customers, getCustomers } = useContext(CustomerContext)
 
     const history = useHistory();
     /*
@@ -20,18 +18,16 @@ export const AnimalForm = () => {
         No more `document.querySelector()` in React.
     */
     const name = useRef(null)
-    const breed = useRef(null)
     const location = useRef(null)
-    const customer = useRef(null)
 
     /*
         Get animal state and location state on initialization.
     */
     useEffect(() => {
-       getCustomers().then(getLocations)
+       getLocations()
     }, [])
 
-    const constructNewAnimal = () => {
+    const constructNewEmployee = () => {
         /*
             The `location` and `customer` variables below are
             the references attached to the input fields. You
@@ -39,41 +35,32 @@ export const AnimalForm = () => {
             but rather `.current.value` now in React.
         */
         const locationId = parseInt(location.current.value)
-        const customerId = parseInt(customer.current.value)
 
         if (locationId === 0) {
             window.alert("Please select a location")
         } else {
-            addAnimal({
+            addEmployee({
                 name: name.current.value,
-                breed: breed.current.value,
-                customerId,
                 locationId
                 
             })
-            .then(() => history.push("/animals"))
+            .then(() => history.push("/employees"))
         }
     }
 
     return (
-        <form className="animalForm">
-            <h2 className="animalForm__title">New Animal</h2>
+        <form className="employeeForm">
+            <h2 className="employeeForm__title">New Employee</h2>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="animalName">Animal name: </label>
-                    <input type="text" id="animalName" ref={name} required autoFocus className="form-control" placeholder="Animal name" />
-                </div>
-            </fieldset>
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="animalBreed">Animal breed: </label>
-                    <input type="text" id="animalBreed" ref={breed} required autoFocus className="form-control" placeholder="Animal breed" />
+                    <label htmlFor="employeeName">Employee name: </label>
+                    <input type="text" id="employeeName" ref={name} required autoFocus className="form-control" placeholder="Employee name" />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="location">Assign to location: </label>
-                    <select defaultValue="" name="location" ref={location} id="animalLocation" className="form-control" >
+                    <select defaultValue="" name="location" ref={location} id="employeeLocation" className="form-control" >
                         <option value="0">Select a location</option>
                         {locations.map(l => (
                             <option key={l.id} value={l.id}>
@@ -83,26 +70,13 @@ export const AnimalForm = () => {
                     </select>
                 </div>
             </fieldset>
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="customer">Customer: </label>
-                    <select defaultValue="" name="customer" ref={customer} id="customerAnimal" className="form-control" >
-                        <option value="0">Select a customer</option>
-                        {customers.map(c => (
-                            <option key={c.id} value={c.id}>
-                                {c.name}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-            </fieldset>
             <button type="submit"
                 onClick={evt => {
                     evt.preventDefault() // Prevent browser from submitting the form
-                    constructNewAnimal()
+                    constructNewEmployee()
                 }}
                 className="btn btn-primary">
-                Save Animal
+                Save Employee
             </button>
         </form>
     )
