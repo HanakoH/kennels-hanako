@@ -5,13 +5,14 @@ import { AnimalProvider } from "./animal/AnimalProvider"
 import { AnimalList } from "./animal/AnimalList"
 import { AnimalForm } from "./animal/AnimalForm"
 import { AnimalDetail } from "./animal/AnimalDetail"
-import { LocationProvider } from "./location/LocationProvider";
-import { LocationList } from "./location/LocationList";
 import { EmployeeProvider } from "./employee/EmployeeProvider"
 import { EmployeeList } from "./employee/EmployeeList"
+import { EmployeeForm } from "./employee/EmployeeForm"
+import { EmployeeDetail } from "./employee/EmployeeDetail"
+import { LocationProvider } from "./location/LocationProvider";
+import { LocationList } from "./location/LocationList";
 import { CustomerProvider } from "./customer/CustomerProvider"
 import { CustomerList } from "./customer/CustomerList"
-import { EmployeeForm } from "./employee/EmployeeForm"
 import { LocationForm } from "./location/LocationForm"
 
 
@@ -59,6 +60,12 @@ export const ApplicationViews = () => {
                         <EmployeeForm />
                     </Route>
                 </LocationProvider>
+            </EmployeeProvider>
+
+            <EmployeeProvider>
+                <Route exact path="/employees/detail/:employeeId(\d+)">
+                    <EmployeeDetail />
+                </Route>
             </EmployeeProvider>
 
             {/* Render the location list when http://localhost:3000/locations */}
