@@ -11,25 +11,26 @@
       "id": 2,
       "name": "Silly Billy",
       "breed": "Beagle",
-      "customerId": 1,
+      "customerId": 3,
       "locationId": 2
     },
     {
       "id": 3,
       "name": "Borg",
       "breed": "The Borg",
-      "customerId": 1,
+      "customerId": 4,
       "locationId": 2
     },
     {
       "id": 4,
       "name": "Halo",
       "breed": "Poodle",
-      "customerId": 1,
+      "customerId": 3,
       "locationId": 1
     },
     {
       "name": "Artemis",
+      "breed": "Great Pyrenees",
       "locationId": 1,
       "customerId": 2,
       "id": 5
@@ -39,17 +40,26 @@
     {
       "id": 1,
       "name": "Hannah Hall",
-      "address": "7002 Chestnut Ct"
+      "address": "7002 Chestnut Ct",
+      "email": "hannahHall@hh.com"
     },
     {
       "id": 2,
       "name": "Brandon Soundara",
-      "address": "8675 309 Street"
+      "address": "8675 309 Street",
+      "email": "brandonSound@soundcloud.com"
     },
     {
       "id": 3,
       "name": "Bill O'Bob",
-      "address": "248 Billy Goat lane"
+      "address": "248 Billy Goat lane",
+      "email": "bill@bob.com"
+    },
+    {
+      "email": "test@test.com",
+      "name": "Ben Gerogey",
+      "address": "68 Hannity Lane",
+      "id": 4
     }
   ],
   "employees": [
@@ -72,6 +82,11 @@
       "id": 4,
       "name": "Barnabus Carl",
       "locationId": 1
+    },
+    {
+      "name": "Carl Jung",
+      "locationId": 2,
+      "id": 5
     }
   ],
   "locations": [
