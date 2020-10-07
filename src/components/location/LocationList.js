@@ -15,7 +15,7 @@ export const LocationList = () => {
         {
         locations.map(location => {
             return <LocationCard key={location.id} location={location} />
-        })    
+        })
         }    
         </div>
     )
