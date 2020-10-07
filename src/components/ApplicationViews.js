@@ -3,9 +3,14 @@ import { Route } from "react-router-dom"
 import { Home } from "./Home"
 import { AnimalProvider } from "./animal/AnimalProvider"
 import { AnimalList } from "./animal/AnimalList"
-import { EmployeeCard } from "./employee/Employee";
-import { LocationCard } from "./location/Location";
-import { CustomerCard } from "./customer/Customer";
+import { AnimalForm } from "./animal/AnimalForm"
+import { LocationProvider } from "./location/LocationProvider";
+import { LocationList } from "./location/LocationList";
+import { EmployeeProvider } from "./employee/EmployeeProvider"
+import { EmployeeList } from "./employee/EmployeeList"
+import { CustomerProvider } from "./customer/CustomerProvider"
+import { CustomerList } from "./customer/CustomerList"
+
 
 export const ApplicationViews = () => {
     return (
@@ -17,25 +22,41 @@ export const ApplicationViews = () => {
 
             {/* Render the animal list when http://localhost:3000/animals */}
             <AnimalProvider>
-                <Route path="/animals">
+                <Route exact path="/animals">
                     <AnimalList />
                 </Route>
             </AnimalProvider> 
 
-            {/* Render the employee list when http://localhost:3000/employees */}
-            <Route path="/employees">
-                <EmployeeCard />
-            </Route>
+            <AnimalProvider>
+                <LocationProvider>
+                    <CustomerProvider>
+                        <Route exact path="/animals/create">
+                            <AnimalForm />
+                        </Route>
+                    </CustomerProvider>
+                </LocationProvider>
+            </AnimalProvider>
 
+            {/* Render the employee list when http://localhost:3000/employees */}
+            <EmployeeProvider>
+                <Route path="/employees">
+                    <EmployeeList />
+                </Route>
+            </EmployeeProvider>
+            
             {/* Render the location list when http://localhost:3000/locations */}
-            <Route path="/locations">
-                <LocationCard />
-            </Route>
+            <LocationProvider>
+                <Route path="/locations">
+                    <LocationList />
+                </Route>
+            </LocationProvider>
 
             {/* Render the custom list when http://localhost:3000/customers */}
-            <Route path="/customers">
-                <CustomerCard />
-            </Route>
+            <CustomerProvider>
+                <Route path="/customers">
+                    <CustomerList />
+                </Route>
+            </CustomerProvider>
         </>
     )
 }
