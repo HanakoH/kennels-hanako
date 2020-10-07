@@ -21,7 +21,7 @@ export const LocationForm = () => {
             address: address.current.value
             
         })
-        .then(() => history.push("/employees"))
+        .then(() => history.push("/locations"))
     }
 
     return (

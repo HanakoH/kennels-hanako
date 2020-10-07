@@ -92,6 +92,16 @@
       "id": 2,
       "name": "Nashville South",
       "address": "209 Emory Drive"
+    },
+    {
+      "name": "West Nashville",
+      "address": "763 Westbrook Rd",
+      "id": 3
+    },
+    {
+      "name": "East Nashville ",
+      "address": "200 Local Bravo Street",
+      "id": 4
     }
   ]
 }

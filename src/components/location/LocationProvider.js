@@ -28,6 +28,18 @@ export const LocationProvider = (props) => {
         })
             .then(getLocations)
     }
+
+    const getLocationById = (id) => {
+        return fetch(`http://localhost:8088/locations/${id}?_embed=employees&_embed=animals`)
+            .then(res => res.json())
+    }
+
+    const removeLocation = LocationId => {
+        return fetch(`http://localhost:8088/locations/${LocationId}`, {
+            method: "DELETE"
+        })
+            .then(getLocations)
+    }
     /*
         You return a context provider which has the
         `locations` state, the `addLocation` function,
@@ -36,7 +48,7 @@ export const LocationProvider = (props) => {
     */
     return (
         <LocationContext.Provider value={{
-            locations, getLocations, addLocation
+            locations, getLocations, addLocation, getLocationById, removeLocation
         }}>
             {props.children}
         </LocationContext.Provider>
