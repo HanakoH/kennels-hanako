@@ -14,12 +14,15 @@ export const CustomerList = () => {
 
 
     return (	
-		<div className="customers">
+    <>  
+      <h2>Customers</h2>  
+		  <div className="customers">
         {
-        customers.map(customer => {
-          return <CustomerCard key={customer.id} customer={customer} />
-        })
+          customers.map(customer => {
+            return <CustomerCard key={customer.id} customer={customer} />
+          })
         }
-        </div>
+      </div>
+    </>  
     )
 }

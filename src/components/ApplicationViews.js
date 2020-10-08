@@ -1,18 +1,22 @@
 import React from "react"
 import { Route } from "react-router-dom"
 import { Home } from "./Home"
+// Animal
 import { AnimalProvider } from "./animal/AnimalProvider"
 import { AnimalList } from "./animal/AnimalList"
 import { AnimalForm } from "./animal/AnimalForm"
 import { AnimalDetail } from "./animal/AnimalDetail"
+//Employee
 import { EmployeeProvider } from "./employee/EmployeeProvider"
 import { EmployeeList } from "./employee/EmployeeList"
 import { EmployeeForm } from "./employee/EmployeeForm"
 import { EmployeeDetail } from "./employee/EmployeeDetail"
+//Location
 import { LocationProvider } from "./location/LocationProvider";
 import { LocationList } from "./location/LocationList";
 import { LocationForm } from "./location/LocationForm";
 import { LocationDetail } from "./location/LocationDetail";
+//Customer
 import { CustomerProvider } from "./customer/CustomerProvider";
 import { CustomerList } from "./customer/CustomerList";
 
